@@ -1,4 +1,10 @@
+#!/bin/bash
+
+
 x=a+b
 y=b-c
 z=a*b
 k=a%b
+
+
+#Divison
