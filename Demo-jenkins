@@ -3,9 +3,20 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage('Hello') {
+    stage('Install') {
       steps {
-        sh 'echo Hello World'
+        sh 'node -v'
+        sh 'npm -v'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'echo Building application...'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'echo Running tests...'
       }
     }
   }
