@@ -1,0 +1,16 @@
+pipeline {
+  agent {
+    docker { image 'node:16-alpine' }
+  }
+  stages {
+    stage('Container Info') {
+      steps {
+        sh 'uname -a'
+        sh 'cat /etc/os-release'
+        sh 'whoami'
+        sh 'pwd'
+      }
+    }
+  }
+}
+
