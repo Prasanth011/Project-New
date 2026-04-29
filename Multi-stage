@@ -12,7 +12,11 @@ pipeline {
               reuseNode true
             }
           }
+          options {
+            retry(2)
+          }
           steps {
+            checkout scm
             sh 'mvn --version'
           }
         }
@@ -24,7 +28,11 @@ pipeline {
               reuseNode true
             }
           }
+          options {
+            retry(2)
+          }
           steps {
+            checkout scm
             sh 'node --version'
             sh 'npm --version'
           }
@@ -32,5 +40,7 @@ pipeline {
 
       }
     }
+  }
+}
   }
 }
